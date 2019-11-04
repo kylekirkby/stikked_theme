@@ -33,10 +33,14 @@ $(document).ready(function() {
     function setupEditor(elementId, readOnly=false) {
       modes = $.parseJSON($("#codemirror_modes").text());
       var codeMirrorOptions = {
-        mode: "scheme",
         lineNumbers: true,
         matchBrackets: true,
         tabMode: "indent",
+        root_name: 'pre',
+        tabSize: 4,
+        indentUnit: 4,
+        indentWithTabs: true,
+        mode: "text/x-csrc",
         viewportMargin: Infinity
       };
       if(readOnly == true){
